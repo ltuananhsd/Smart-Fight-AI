@@ -1,33 +1,34 @@
-# Environment & secrets
+# Environment
 .env
 .env.local
-*.key
-*_key.txt
-
-# API keys in scripts
-scripts/*.log
+.env.production
 
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
-.Python
-env/
-venv/
-.venv/
+*.egg-info/
+dist/
+build/
+
+# Test outputs
+test_result*.json
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-*~
 
 # OS
 .DS_Store
 Thumbs.db
-desktop.ini
 
-# Node (if using flow-diagram locally)
-node_modules/
+# Virtual environment
+.venv/
+
+# Vercel
+.vercel/
+
+# Logs
+*.log

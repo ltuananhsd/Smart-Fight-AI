@@ -1,36 +1,9 @@
-# Environment
 .env
-.env.local
-.env.production
-
-# Python
 __pycache__/
-*.py[cod]
-*$py.class
-*.egg-info/
+*.pyc
+node_modules/
 dist/
-build/
-
-# Test outputs
-test_result*.json
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Virtual environment
-.venv/
-
-# Vercel
 .vercel/
-
-# Logs
-*.log
-
-.vercel
+test_result.json
+.vscode/
+.DS_Store

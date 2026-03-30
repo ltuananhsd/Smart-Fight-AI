@@ -18,8 +18,6 @@ load_dotenv()
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
 
 from routers.chat_router import router as chat_router
 from routers.search_router import router as search_router
@@ -47,18 +45,9 @@ app.include_router(search_router, prefix="/api", tags=["search"])
 app.include_router(chat_router, prefix="/api", tags=["chat"])
 app.include_router(compare_router, prefix="/api", tags=["compare"])
 
-# Static files (frontend)
-static_dir = Path(__file__).parent / "static"
-if static_dir.exists():
-    app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
-
-
 @app.get("/")
-async def serve_index():
-    """Serve the main frontend page."""
-    index_path = static_dir / "index.html"
-    if index_path.exists():
-        return FileResponse(str(index_path))
+async def root_health():
+    """Health check for the root endpoint."""
     return {"message": "Travel Optimization Engine API", "docs": "/docs"}
 
 
